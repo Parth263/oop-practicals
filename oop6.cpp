@@ -16,7 +16,7 @@ class Item
             name="None";
             code=0;
             quantity=0;
-            cost=0.0;1
+            cost=0.01;
 
         }
         void accept ()
@@ -168,3 +168,88 @@ int main()
     cout<<"\nThank You!";
     return 0;
 };
+
+
+
+
+// In the `check` function within the `Item` class, `vector<Item>::iterator it` and `int x` are the parameters. This function is designed to check whether the item pointed to by the iterator `it` has the same code as the integer `x`. Let's break it down for clarity:
+
+// ### Vector
+
+// 1. **What is a Vector?**
+//    - In C++, a vector is a dynamic array that can grow or shrink in size. It's part of the Standard Template Library (STL) and is used to store a collection of objects. In this case, the vector stores objects of the `Item` class.
+
+// 2. **Why Use Vectors?**
+//    - Vectors are used here because they provide flexibility in managing a collection of `Item` objects. They allow easy addition (with `push_back`) and removal (with `erase`) of elements and can dynamically adjust their size as needed.
+
+// ### Vector Iterator
+
+// 1. **What is an Iterator?**
+//    - An iterator is like a pointer that points to elements in a container like a vector. It's used to iterate through the elements of the vector, accessing or modifying them.
+
+// 2. **Role in `check` Function**
+//    - The iterator `it` is used to point to a specific `Item` object within the vector. The `check` function uses this iterator to access the `Item` object it points to.
+
+// ### Function Role
+
+// - **Purpose**: The function `check` is designed to compare the code of the `Item` object pointed to by `it` with the given code `x`.
+// - **How It Works**: 
+//   - If the code of the item equals `x`, the function returns `true`, indicating a match.
+//   - If not, it returns `false`.
+
+// ### Usage in the Program
+
+// - In the `main` function, particularly in the case for deleting an item (case 4), this `check` function is used to find the specific item in the vector that matches the provided code. Once found, that item can be deleted from the vector.
+
+// ### Example:
+
+// Imagine you have a list of items, and you're looking for one with a specific code. The `check` function is like asking, "Is this the item I'm looking for?" as you go through each item in the list (`vector`). If you find the right item (the codes match), you confirm it's the one you're looking for.
+
+
+
+
+// This C++ program is a simple inventory management system that allows a user to insert, sort, search, delete, and display item records. It uses object-oriented programming concepts like classes, objects, and iterators. Let's break down the code and explain its key components and concepts:
+
+// ### Class Definition: `Item`
+// - **Attributes**: `name`, `code`, `quantity`, `cost` (private)
+// - **Constructor**: Initializes an `Item` object with default values.
+// - **Member Functions**:
+//     - `accept()`: Accepts details of an item from the user.
+//     - `check(vector<Item>::iterator it, int x)`: Checks if the current item matches a given code.
+//     - `getcode()`, `getquantity()`, `getcost()`: Accessors for item code, quantity, and cost.
+//     - `display(vector<Item>::iterator it)`: Displays details of an item.
+//     - `mesg(string s)`: Prints a message after sorting.
+
+// ### Sorting Functions
+// - `less_code`, `less_quantity`, `less_cost`: These functions are used for sorting based on different criteria (code, quantity, cost).
+
+// ### Global Variable
+// - `item_code`: Used for searching items by code.
+
+// ### Main Function
+// 1. **Variable Declarations**: Variables for the item (`obj`), a vector of items (`v`), iterators, and user choices.
+// 2. **Menu Driven Loop**: Repeats until the user chooses to exit (option 6).
+// 3. **Switch Case**:
+//     - **Case 1** (Insert Record): Adds a new item to the vector `v`.
+//     - **Case 2** (Sort Records): Sorts the records based on user's choice of criteria.
+//     - **Case 3** (Search Record): Searches for an item by code.
+//     - **Case 4** (Delete Record): Deletes an item by code.
+//     - **Case 5** (Display Records): Displays all item records.
+//     - **Case 6**: Exits the program.
+
+// ### Key Concepts:
+// - **Object-Oriented Programming (OOP)**: The program uses classes and objects (Item class) to represent and manage data.
+// - **STL Vectors**: It uses `vector` from the Standard Template Library (STL) to store and manage collections of items.
+// - **Iterators**: Used to iterate over the vector of items.
+// - **Function Pointers**: In sorting, function pointers are passed to the `sort` function to define sorting criteria.
+// - **Menu-Driven Program**: Allows user interaction and operation choices through a menu.
+
+// ### Easy Explanation:
+// Imagine a store where you keep a list of items. Each item has a name, a code, a quantity, and a cost. In this program, you can:
+// - **Add new items**: Enter details like name, code, etc.
+// - **Arrange items**: Sort them by code, quantity, or cost.
+// - **Look for a specific item**: Search for an item using its code.
+// - **Remove an item**: Delete an item from the list.
+// - **See all items**: Display all items and their details.
+
+// It's like a digital notebook for keeping track of store items. You can add new notes (items), organize them, find a specific note, delete a note, or look at all the notes you've made.

@@ -85,6 +85,12 @@ int main()
 
 
 
+// Example Use Case in a Complex Class
+// Assuming a Complex class: Let's say the Complex class represents complex numbers, with real and imaginary parts as private members.
+// Reading a Complex Number: Overloading operator>> allows you to directly input a complex number, like cin >> myComplexNumber;.
+// Printing a Complex Number: Overloading operator<< enables you to print a complex number in a formatted way, such as cout << myComplexNumber;.
+// These overloaded operators make the Complex class more intuitive and easy to use with standard C++ stream input/output, allowing complex numbers to be seamlessly read from and written to streams just like built-in data types.
+
 
 
 
